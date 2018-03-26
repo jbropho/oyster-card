@@ -7,10 +7,12 @@ class OysterCard
   end
 
   def top_up(amount)
-    raise StandardError unless @balance + amount <= 90
+    raise "Max balance of #{MAX_CAPACITY} exceeded" if exceed_limit?(amount)
     @balance += amount
   end
 
-
-
+  private
+  def exceed_limit?(amount)
+    @balance + amount > MAX_CAPACITY
+  end 
 end

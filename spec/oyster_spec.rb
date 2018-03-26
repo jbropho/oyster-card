@@ -16,21 +16,11 @@ describe OysterCard do
       oyster_card.top_up(10)
       expect(oyster_card.balance).to eq 10
     end
-
-    context 'when attempting to exceed top_up limit' do
-      it 'raises an error' do
-        oyster_card.top_up(OysterCard::MAX_CAPACITY)
-        expect{ oyster_card.top_up(1) }.to raise_error StandardError
-      end
-    end
   end
 
-  # describe '.exceed_limit?' do
-  #   allow(oyster_card).to receive(:balance).and_return 90
-  #   expect
-  #
-  # end
-
-
-
+  describe '.exceed_limit?' do
+    it 'returns true when limit exceeded' do 
+      expect(oyster_card.send(:exceed_limit?, 91)).to eq(true)
+    end 
+  end
 end
