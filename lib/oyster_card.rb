@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OysterCard
   attr_reader :balance
   MAX_CAPACITY = 90
@@ -12,7 +14,8 @@ class OysterCard
   end
 
   private
+
   def exceed_limit?(amount)
     @balance + amount > MAX_CAPACITY
-  end 
+  end
 end

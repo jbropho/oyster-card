@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'oyster_card'
 
 describe OysterCard do
@@ -19,8 +21,8 @@ describe OysterCard do
   end
 
   describe '.exceed_limit?' do
-    it 'returns true when limit exceeded' do 
+    it 'returns true when limit exceeded' do
       expect(oyster_card.send(:exceed_limit?, 91)).to eq(true)
-    end 
+    end
   end
 end
