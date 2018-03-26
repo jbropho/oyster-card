@@ -7,6 +7,7 @@ class OysterCard
   end
 
   def touch_in
+    raise 'You are already touched in' if touched_in?
     @in_journey = true
   end
 
