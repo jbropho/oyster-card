@@ -29,14 +29,25 @@ describe OysterCard do
   end
 
   describe '.touch_in' do
-    it 'starts a journey' do 
+    it 'starts a journey' do
       expect(oyster_card.touch_in).to eq(true)
     end
-  end 
-  
-  describe '.touch_out' do 
+  end
+
+  describe '.touch_out' do
     it 'it ends a journey' do
       expect(oyster_card.touch_out).to eq(false)
-    end 
-  end 
+    end
+  end
+
+  describe '.touched_in?' do
+    it 'returns true when touched in' do
+      oyster_card.stub(:in_journey) { true }
+      expect(oyster_card.touched_in?).to eq true
+    end
+
+    it 'returns false when not touched in' do
+    end
+  end
+
 end
