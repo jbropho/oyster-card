@@ -27,4 +27,10 @@ describe OysterCard do
       expect(oyster_card.balance).to eq 5
     end
   end
+
+  describe '.touch_in' do
+    it 'changes in_journey when touching in' do 
+      expect(oyster_card.touch_in).to eq(true)
+    end
+  end 
 end

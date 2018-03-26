@@ -6,6 +6,10 @@ class OysterCard
     @balance = balance
   end
 
+  def touch_in
+    @in_journey = true
+  end 
+
   def top_up(amount)
     raise "Max balance of #{MAX_CAPACITY} exceeded" if exceed_limit?(amount)
     @balance += amount

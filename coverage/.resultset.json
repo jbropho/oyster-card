@@ -2,8 +2,6 @@
   "RSpec": {
     "coverage": {
       "/Users/jordanbrooks/Documents/makers/week-challenge/oyster-card/spec/oyster_spec.rb": [
-        null,
-        null,
         1,
         null,
         1,
@@ -15,9 +13,19 @@
         null,
         1,
         1,
+        1,
+        1,
+        null,
         null,
         null,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        2,
         1,
         1,
         1,
@@ -32,17 +40,23 @@
         null
       ],
       "/Users/jordanbrooks/Documents/makers/week-challenge/oyster-card/lib/oyster_card.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         1,
         1,
         1,
         null,
-        1,
-        4,
         null,
-        null,
-        1,
         1,
         1,
         null,
@@ -55,6 +69,6 @@
         null
       ]
     },
-    "timestamp": 1522079343
+    "timestamp": 1522083207
   }
 }
