@@ -15,8 +15,22 @@ describe OysterCard do
   end
 
   describe '.exceed_limit?' do
-    it 'returns true when limit exceeded' do
-      expect(oyster_card.send(:exceed_limit?, 91)).to eq(true)
+    context 'when trying to top up more than max amount' do 
+      it 'returns true' do
+        expect(oyster_card.send(:exceed_limit?, 91)).to eq(true)
+      end 
+    end
+    context 'when current balance + top up > max amount' do
+      it 'returns true' do
+        oyster_card.stub(:balance) { 50 }
+        expect(oyster_card.send(:exceed_limit?, 41)).to eq(true)
+      end
+    end
+    context 'when current balance + top up  < max amount' do
+      it 'returns false' do
+        oyster_card.stub(:balance) { 50 }
+        expect(oyster_card.send(:exceed_limit?, 40)).to eq(false)
+      end
     end
   end
 
