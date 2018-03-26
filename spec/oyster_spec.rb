@@ -43,7 +43,15 @@ describe OysterCard do
 
   describe '.touch_out' do
     it 'it ends a journey' do
+      oyster_card.stub(:touched_in?) { true }
       expect(oyster_card.touch_out).to eq(false)
+    end
+
+    context 'when already touched out' do
+      it 'raises an error' do
+        oyster_card.stub(:touched_in?) { false }
+        expect{ oyster_card.touch_out }.to raise_error 'You are already touched out'
+      end
     end
   end
 
@@ -58,5 +66,4 @@ describe OysterCard do
       expect(oyster_card.touched_in?).to eq false
     end
   end
-
 end

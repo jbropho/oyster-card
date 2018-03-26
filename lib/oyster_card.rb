@@ -4,6 +4,7 @@ class OysterCard
 
   def initialize(balance = 0)
     @balance = balance
+    @in_journey = false
   end
 
   def touch_in
@@ -12,6 +13,7 @@ class OysterCard
   end
 
   def touch_out
+    raise 'You are already touched out' unless touched_in?
     @in_journey = false
   end
 
@@ -29,7 +31,6 @@ class OysterCard
   end
 
   private
-
   def exceed_limit?(amount)
     @balance + amount > MAX_CAPACITY
   end
