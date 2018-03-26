@@ -5,7 +5,7 @@
         1,
         null,
         1,
-        5,
+        6,
         null,
         1,
         1,
@@ -37,6 +37,12 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/jordanbrooks/Documents/makers/week-challenge/oyster-card/lib/oyster_card.rb": [
@@ -45,7 +51,11 @@
         1,
         null,
         1,
-        5,
+        6,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         1,
@@ -69,6 +79,6 @@
         null
       ]
     },
-    "timestamp": 1522083207
+    "timestamp": 1522083432
   }
 }

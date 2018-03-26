@@ -29,8 +29,14 @@ describe OysterCard do
   end
 
   describe '.touch_in' do
-    it 'changes in_journey when touching in' do 
+    it 'starts a journey' do 
       expect(oyster_card.touch_in).to eq(true)
     end
+  end 
+  
+  describe '.touch_out' do 
+    it 'it ends a journey' do
+      expect(oyster_card.touch_out).to eq(false)
+    end 
   end 
 end
