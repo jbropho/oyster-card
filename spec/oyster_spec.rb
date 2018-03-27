@@ -40,7 +40,7 @@ describe OysterCard do
   describe '.deduct' do
     subject(:oyster_card) { OysterCard.new(10) }
     it 'deducts specified amount' do
-      oyster_card.deduct(5)
+      oyster_card.send(:deduct, 5)
       expect(oyster_card.balance).to eq 5
     end
   end
@@ -101,5 +101,4 @@ describe OysterCard do
       end 
     end 
   end
-
 end
