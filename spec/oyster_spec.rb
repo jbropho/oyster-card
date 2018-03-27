@@ -15,24 +15,27 @@ describe OysterCard do
   end
 
   describe '.exceed_limit?' do
+
     context 'when trying to top up more than max amount' do 
       it 'returns true' do
         expect(oyster_card.send(:exceed_limit?, 91)).to eq(true)
       end 
     end
+    
     context 'when current balance + top up > max amount' do
       it 'returns true' do
         oyster_card.stub(:balance) { 50 }
         expect(oyster_card.send(:exceed_limit?, 41)).to eq(true)
       end
     end
+  end
+
     context 'when current balance + top up  < max amount' do
       it 'returns false' do
         oyster_card.stub(:balance) { 50 }
         expect(oyster_card.send(:exceed_limit?, 40)).to eq(false)
       end
     end
-  end
 
   describe '.deduct' do
     subject(:oyster_card) { OysterCard.new(10) }
@@ -44,6 +47,7 @@ describe OysterCard do
 
   describe '.touch_in' do
     it 'starts a journey' do
+      oyster_card.stub(:balance) { 2 }
       expect(oyster_card.touch_in).to eq(true)
     end
 
@@ -56,9 +60,11 @@ describe OysterCard do
   end
 
   describe '.touch_out' do
-    it 'it ends a journey' do
-      oyster_card.stub(:touched_in?) { true }
-      expect(oyster_card.touch_out).to eq(false)
+    context 'when alread touched in' do 
+      it 'it ends a journey' do
+        oyster_card.stub(:touched_in?) { true }
+        expect(oyster_card.touch_out).to eq(false)
+      end
     end
 
     context 'when already touched out' do
@@ -80,4 +86,13 @@ describe OysterCard do
       expect(oyster_card.touched_in?).to eq false
     end
   end
+
+  describe '.below_min?' do 
+    context 'when balance is below min threshold' do 
+      it 'returns true' do 
+        oyster_card.stub(:balance) { 0.4 }
+        expect(oyster_card.below_min?).to eq true
+      end 
+    end 
+  end 
 end

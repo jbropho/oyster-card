@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-03-26T20:09:11+01:00">2018-03-26T20:09:11+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-03-27T16:50:40+01:00">2018-03-27T16:50:40+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.68
+         1.66
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>70</b> relevant lines. 
-    <span class="green"><b>70</b> lines covered</span> and
+    <b>81</b> relevant lines. 
+    <span class="green"><b>81</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,19 +53,19 @@
       <tr>
         <td class="strong"><a href="#b69d3440630ea70a8abd0e003717e6c5b6452740" class="src_link" title="lib/oyster_card.rb">lib/oyster_card.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>37</td>
-        <td>22</td>
-        <td>22</td>
+        <td>43</td>
+        <td>26</td>
+        <td>26</td>
         <td>0</td>
-        <td>2.3</td>
+        <td>2.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#9960534460f0f78ee77f0a790c17e25de89815a9" class="src_link" title="spec/oyster_spec.rb">spec/oyster_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>83</td>
-        <td>48</td>
-        <td>48</td>
+        <td>98</td>
+        <td>55</td>
+        <td>55</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -91,8 +91,8 @@
     <h3>lib/oyster_card.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
+      <b>26</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -118,205 +118,241 @@
           <code class="ruby">  MAX_CAPACITY = 90</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  MIN_FARE = 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize(balance = 0)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="6">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="7">
+          <span class="hits">13</span>
           
           <code class="ruby">    @balance = balance</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="7">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="8">
+          <span class="hits">13</span>
           
           <code class="ruby">    @in_journey = false</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def touch_in</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
+        <li class="covered" data-hits="2" data-linenumber="12">
           <span class="hits">2</span>
           
           <code class="ruby">    raise &#39;You are already touched in&#39; if touched_in?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    raise &#39;You do not have enough money&#39; if below_min?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">    @in_journey = true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def touch_out</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    raise &#39;You are already touched out&#39; unless touched_in?</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
+          <code class="ruby">  def touch_out</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    raise &#39;You are already touched out&#39; unless touched_in?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
           <code class="ruby">    @in_journey = false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">  def touched_in?</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="21">
+        <li class="covered" data-hits="3" data-linenumber="23">
           <span class="hits">3</span>
           
           <code class="ruby">    in_journey</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def top_up(amount)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    raise &quot;Max balance of #{MAX_CAPACITY} exceeded&quot; if exceed_limit?(amount)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    @balance += amount</code>
+          <code class="ruby">  def below_min?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    balance &lt; MIN_FARE</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="29">
           
-          <code class="ruby">  def deduct(amount)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">    @balance -= amount</code>
+          <code class="ruby">  def top_up(amount)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    raise &quot;Max balance of #{MAX_CAPACITY} exceeded&quot; if exceed_limit?(amount)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @balance += amount</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def deduct(amount)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">  def exceed_limit?(amount)</code>
+          <code class="ruby">    @balance -= amount</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="35">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    balance + amount &gt; MAX_CAPACITY</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def exceed_limit?(amount)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="41">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    balance + amount &gt; MAX_CAPACITY</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">end</code>
@@ -332,8 +368,8 @@
     <h3>spec/oyster_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>48</b> relevant lines. 
-      <span class="green"><b>48</b> lines covered</span> and
+      <b>55</b> relevant lines. 
+      <span class="green"><b>55</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -359,8 +395,8 @@
           <code class="ruby">describe OysterCard do</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="4">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="4">
+          <span class="hits">13</span>
           
           <code class="ruby">  subject(:oyster_card) { OysterCard.new }</code>
         </li>
@@ -443,358 +479,358 @@
           <code class="ruby">  describe &#39;.exceed_limit?&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="18">
           
-          <code class="ruby">    context &#39;when trying to top up more than max amount&#39; do </code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;returns true&#39; do</code>
+          <code class="ruby">    context &#39;when trying to top up more than max amount&#39; do </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(oyster_card.send(:exceed_limit?, 91)).to eq(true)</code>
+          <code class="ruby">      it &#39;returns true&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end </code>
+          <code class="ruby">        expect(oyster_card.send(:exceed_limit?, 91)).to eq(true)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
+          <code class="ruby">      end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">    context &#39;when current balance + top up &gt; max amount&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">      it &#39;returns true&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="25">
+        <li class="covered" data-hits="2" data-linenumber="27">
           <span class="hits">2</span>
           
           <code class="ruby">        oyster_card.stub(:balance) { 50 }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">        expect(oyster_card.send(:exceed_limit?, 41)).to eq(true)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">    context &#39;when current balance + top up  &lt; max amount&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">      it &#39;returns false&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="31">
+        <li class="covered" data-hits="2" data-linenumber="35">
           <span class="hits">2</span>
           
           <code class="ruby">        oyster_card.stub(:balance) { 50 }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
           <code class="ruby">        expect(oyster_card.send(:exceed_limit?, 40)).to eq(false)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &#39;.deduct&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="38">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    subject(:oyster_card) { OysterCard.new(10) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;deducts specified amount&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
+          <code class="ruby">  describe &#39;.deduct&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="41">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    subject(:oyster_card) { OysterCard.new(10) }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;deducts specified amount&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
           <code class="ruby">      oyster_card.deduct(5)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(oyster_card.balance).to eq 5</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;.touch_in&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;starts a journey&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="50">
+          <span class="hits">2</span>
           
-          <code class="ruby">      expect(oyster_card.touch_in).to eq(true)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &#39;when already touched in&#39; do</code>
+          <code class="ruby">      oyster_card.stub(:balance) { 2 }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
+          <code class="ruby">      expect(oyster_card.touch_in).to eq(true)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when already touched in&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
           <code class="ruby">      it &#39;raises an error&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="52">
+        <li class="covered" data-hits="2" data-linenumber="56">
           <span class="hits">2</span>
           
           <code class="ruby">        oyster_card.stub(:touched_in?) { true }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="53">
+        <li class="covered" data-hits="2" data-linenumber="57">
           <span class="hits">2</span>
           
           <code class="ruby">        expect{ oyster_card.touch_in }.to raise_error &#39;You are already touched in&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
+        <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;.touch_out&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;it ends a journey&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="60">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      oyster_card.stub(:touched_in?) { true }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(oyster_card.touch_out).to eq(false)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">    context &#39;when alread touched in&#39; do </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;when already touched out&#39; do</code>
+          <code class="ruby">      it &#39;it ends a journey&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="2" data-linenumber="65">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        oyster_card.stub(:touched_in?) { true }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;raises an error&#39; do</code>
+          <code class="ruby">        expect(oyster_card.touch_out).to eq(false)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="66">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        oyster_card.stub(:touched_in?) { false }</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="67">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        expect{ oyster_card.touch_out }.to raise_error &#39;You are already touched out&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;.touched_in?&#39; do</code>
+          <code class="ruby">    context &#39;when already touched out&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;returns true when touched in&#39; do</code>
+          <code class="ruby">      it &#39;raises an error&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="74">
+        <li class="covered" data-hits="2" data-linenumber="72">
           <span class="hits">2</span>
           
-          <code class="ruby">      oyster_card.stub(:in_journey) { true }</code>
+          <code class="ruby">        oyster_card.stub(:touched_in?) { false }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="73">
+          <span class="hits">2</span>
           
-          <code class="ruby">      expect(oyster_card.touched_in?).to eq true</code>
+          <code class="ruby">        expect{ oyster_card.touch_out }.to raise_error &#39;You are already touched out&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
@@ -806,34 +842,124 @@
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;returns false when not touched in&#39; do</code>
+          <code class="ruby">  describe &#39;.touched_in?&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="79">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      oyster_card.stub(:in_journey) { false }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="80">
+        <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(oyster_card.touched_in?).to eq false</code>
+          <code class="ruby">    it &#39;returns true when touched in&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="covered" data-hits="2" data-linenumber="80">
+          <span class="hits">2</span>
           
+          <code class="ruby">      oyster_card.stub(:in_journey) { true }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(oyster_card.touched_in?).to eq true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;returns false when not touched in&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="85">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      oyster_card.stub(:in_journey) { false }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(oyster_card.touched_in?).to eq false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;.below_min?&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when balance is below min threshold&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;returns true&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="93">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        oyster_card.stub(:balance) { 0.4 }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(oyster_card.below_min?).to eq true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby">      end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby">    end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby">  end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">end</code>
