@@ -65,6 +65,12 @@ describe OysterCard do
         oyster_card.stub(:touched_in?) { true }
         expect(oyster_card.touch_out).to eq(false)
       end
+
+      it 'charges a fare' do 
+        oyster_card.top_up(10)
+        oyster_card.stub(:touched_in?) { true }
+        expect{ oyster_card.touch_out }.to change{ oyster_card.balance }.by(-1)
+      end
     end
 
     context 'when already touched out' do
@@ -94,5 +100,6 @@ describe OysterCard do
         expect(oyster_card.below_min?).to eq true
       end 
     end 
-  end 
+  end
+
 end

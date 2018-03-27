@@ -16,6 +16,7 @@ class OysterCard
 
   def touch_out
     raise 'You are already touched out' unless touched_in?
+    deduct(MIN_FARE)
     @in_journey = false
   end
 
@@ -35,7 +36,7 @@ class OysterCard
   def deduct(amount)
     @balance -= amount
   end
-  
+
   private
 
   def exceed_limit?(amount)
