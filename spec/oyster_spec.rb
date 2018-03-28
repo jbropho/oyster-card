@@ -46,15 +46,17 @@ describe OysterCard do
   end
 
   describe '.touch_in' do
+    let(:station) { double(:station_name => 'Aldgate East') }
+    
     it 'starts a journey' do
       oyster_card.stub(:balance) { 2 }
-      expect(oyster_card.touch_in).to eq(true)
+      expect(oyster_card.touch_in(station)).to eq(true)
     end
 
     context 'when already touched in' do
       it 'raises an error' do
         oyster_card.stub(:touched_in?) { true }
-        expect{ oyster_card.touch_in }.to raise_error 'You are already touched in'
+        expect{ oyster_card.touch_in(station) }.to raise_error 'You are already touched in'
       end
     end
   end
@@ -101,4 +103,25 @@ describe OysterCard do
       end 
     end 
   end
+
+  describe '.set_entry_station' do
+    let(:station) { double(:name => 'Aldgate East') }
+    
+    context 'when passed a station' do
+      it 'sets @entry_station to a station' do 
+        oyster_card.set_entry_station(station)
+        station = oyster_card.entry_station
+        expect(station.name).to eq('Aldgate East')
+      end
+    end
+    
+    context 'when not passed a station' do
+      it 'overrides @entry_station to nil' do 
+        oyster_card.set_entry_station(station)
+        oyster_card.set_entry_station()
+        station = oyster_card.entry_station
+        expect(station).to eq(nil)
+      end 
+    end 
+  end 
 end
