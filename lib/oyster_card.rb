@@ -6,7 +6,6 @@ class OysterCard
 
   def initialize(balance = 0)
     @balance = balance
-    @in_journey = false
     @journey_history = Array.new
   end
 
@@ -19,7 +18,7 @@ class OysterCard
   def touch_out(station)
     raise 'You are already touched out' unless touched_in?
     deduct(MIN_FARE)
-    set_entry_station(nil)
+    set_exit_station(nil)
     append_journey
   end
   

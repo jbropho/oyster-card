@@ -3,8 +3,8 @@ require 'journey'
 describe Journey do 
   subject(:aldgate_east) { 'Aldgate East' }
   subject(:whitechapel) { 'WhiteChapel' }
-  subject(:journey) { Journey.new(aldgate_east, whitechapel) }
-  subject(:invalid_journey) { Journey.new(aldgate_east)}
+  subject(:journey) { described_class.new(aldgate_east, whitechapel) }
+  subject(:invalid_journey) { described_class.new(aldgate_east)}
 
   describe '.fare' do 
     context 'when journey is valid' do 
