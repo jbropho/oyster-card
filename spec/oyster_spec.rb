@@ -50,7 +50,7 @@ describe OysterCard do
     
     it 'starts a journey' do
       oyster_card.stub(:balance) { 2 }
-      expect(oyster_card.touch_in(station)).to eq(true)
+      expect(oyster_card.touch_in(station)).to eq(station)
     end
 
     context 'when already touched in' do
@@ -62,10 +62,10 @@ describe OysterCard do
   end
 
   describe '.touch_out' do
-    context 'when alread touched in' do 
+    context 'when already touched in' do 
       it 'it ends a journey' do
         oyster_card.stub(:touched_in?) { true }
-        expect(oyster_card.touch_out).to eq(false)
+        expect(oyster_card.touch_out).to eq(nil)
       end
 
       it 'charges a fare' do 
@@ -85,7 +85,7 @@ describe OysterCard do
 
   describe '.touched_in?' do
     it 'returns true when touched in' do
-      oyster_card.stub(:in_journey) { true }
+      oyster_card.stub(:entry_station) { 'aldgate east' }
       expect(oyster_card.touched_in?).to eq true
     end
 

@@ -12,17 +12,16 @@ class OysterCard
     raise 'You are already touched in' if touched_in?
     raise 'You do not have enough money' if below_min?
     set_entry_station(station)
-    @in_journey = true
   end
 
   def touch_out
     raise 'You are already touched out' unless touched_in?
     deduct(MIN_FARE)
-    @in_journey = false
+    set_entry_station(nil)
   end
 
   def touched_in?
-    in_journey
+    !!entry_station 
   end
 
   def below_min?
