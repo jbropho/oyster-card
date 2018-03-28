@@ -1,2 +1,2 @@
-class Station 
-end 
+class Station
+end

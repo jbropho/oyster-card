@@ -1,11 +1,21 @@
 require 'oyster_card'
 
+
 describe OysterCard do
   subject(:oyster_card) { OysterCard.new }
+  subject(:aldgate_east) { 'Aldgate East' }
+  subject(:whitechapel) { 'WhiteChapel' }
+  
+  
+  describe '.new' do 
+    it 'responds with a balance of 0' do
+      expect(oyster_card.balance).to eq 0
+    end  
 
-  it 'responds with a balance of 0' do
-    expect(oyster_card.balance).to eq 0
-  end
+    it 'has an empty journey history' do 
+      expect(oyster_card.journey_history.length).to be(0)
+    end
+  end 
 
   describe '.top_up' do
     it 'increases balance by specified amount' do
@@ -30,7 +40,7 @@ describe OysterCard do
     end
   end
 
-    context 'when current balance + top up  < max amount' do
+    context 'when current balance + top up < max amount' do
       it 'returns false' do
         oyster_card.stub(:balance) { 50 }
         expect(oyster_card.send(:exceed_limit?, 40)).to eq(false)
@@ -56,29 +66,30 @@ describe OysterCard do
     context 'when already touched in' do
       it 'raises an error' do
         oyster_card.stub(:touched_in?) { true }
-        expect{ oyster_card.touch_in(station) }.to raise_error 'You are already touched in'
+        expect{ oyster_card.touch_in(station) }.to \
+          raise_error 'You are already touched in'
       end
     end
   end
 
   describe '.touch_out' do
     context 'when already touched in' do 
-      it 'it ends a journey' do
+      it 'ends a journey' do
         oyster_card.stub(:touched_in?) { true }
-        expect(oyster_card.touch_out).to eq(nil)
+        expect(oyster_card.touch_out('Aldgate East')).to eq([{:entry=>nil, :exit=>nil}])
       end
 
       it 'charges a fare' do 
         oyster_card.top_up(10)
         oyster_card.stub(:touched_in?) { true }
-        expect{ oyster_card.touch_out }.to change{ oyster_card.balance }.by(-1)
+        expect{ oyster_card.touch_out('Aldgate East') }.to change{ oyster_card.balance }.by(-1)
       end
     end
 
     context 'when already touched out' do
       it 'raises an error' do
         oyster_card.stub(:touched_in?) { false }
-        expect{ oyster_card.touch_out }.to raise_error 'You are already touched out'
+        expect{ oyster_card.touch_out('Aldgate East') }.to raise_error 'You are already touched out'
       end
     end
   end
@@ -108,7 +119,7 @@ describe OysterCard do
     let(:station) { double(:name => 'Aldgate East') }
     
     context 'when passed a station' do
-      it 'sets @entry_station to a station' do 
+      it 'sets @entry_station' do 
         oyster_card.set_entry_station(station)
         station = oyster_card.entry_station
         expect(station.name).to eq('Aldgate East')
@@ -120,8 +131,48 @@ describe OysterCard do
         oyster_card.set_entry_station(station)
         oyster_card.set_entry_station()
         station = oyster_card.entry_station
-        expect(station).to eq(nil)
+        expect(station).to eq(false)
       end 
     end 
   end 
+
+  describe '.set_exit_station' do 
+    let(:station) { double(:name => 'Aldgate East') }
+
+    context 'when passed a station' do 
+      it 'sets @exit_station' do 
+        oyster_card.set_exit_station(station)
+        station = oyster_card.exit_station
+        expect(station.name).to eq('Aldgate East')
+      end 
+    end 
+
+    context 'when not passed a station' do
+      it 'overrides @entry_station to nil' do 
+        oyster_card.set_exit_station(station)
+        oyster_card.set_exit_station()
+        station = oyster_card.exit_station
+        expect(station).to eq(false)
+      end 
+    end 
+  end 
+
+  describe '.append_journey' do 
+    it 'returns a journey hash' do 
+      oyster_card.stub(:entry_station) { aldgate_east }
+      oyster_card.stub(:exit_station) { whitechapel }
+      expect(oyster_card.append_journey).to \
+        eq([{entry: aldgate_east, exit: whitechapel}])
+    end 
+  end 
+
+  #feature tests  
+  describe 'touching in then out' do 
+    it 'creates a journey' do 
+      oyster_card.stub(:balance) { 2 }
+      oyster_card.touch_in(aldgate_east)
+      oyster_card.touch_out(whitechapel)
+      expect(oyster_card.journey_history.size).to be(1)
+    end
+  end  
 end
