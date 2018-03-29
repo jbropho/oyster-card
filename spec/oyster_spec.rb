@@ -9,10 +9,6 @@ describe OysterCard do
     it 'responds with a balance of 0' do
       expect(oyster_card.balance).to eq 0
     end  
-
-    it 'has an empty journey history' do 
-      expect(oyster_card.journey_history.length).to be(0)
-    end
   end 
 
   describe '.top_up' do
@@ -149,14 +145,6 @@ describe OysterCard do
         station = oyster_card.exit_station
         expect(station).to eq(false)
       end 
-    end 
-  end 
-
-  describe '.append_journey' do 
-    it 'adds a journey to journey history' do 
-      oyster_card.stub(:previous_journey) { 'journey object' }
-      expect{ oyster_card.send(:append_journey) }.to \
-       change{oyster_card.journey_history.size}.from(0).to(1)
     end 
   end 
   #feature tests  

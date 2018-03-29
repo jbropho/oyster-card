@@ -1,8 +1,6 @@
 require 'journey'
 
 describe Journey do 
-
-
   describe '.fare' do 
     context 'when passed an invalid journey' do
       it 'returns a penalty fare' do 

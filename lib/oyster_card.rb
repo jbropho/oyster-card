@@ -2,13 +2,12 @@ require_relative 'journey_log'
 
 class OysterCard
   attr_reader :balance, :entry_station
-  attr_reader :journey_history, :exit_station, :previous_journey
+  attr_reader :exit_station, :previous_journey
   MAX_CAPACITY = 90
   MIN_FARE = 1
 
   def initialize(balance = 0)
     @balance = balance
-    @journey_history = Array.new
     @journey_log = JourneyLog.new
   end
   
@@ -36,11 +35,7 @@ class OysterCard
     @balance += amount
   end
 
-  private  
-  def append_journey 
-    journey_history << previous_journey
-  end
-
+  private 
   def manage_journey 
     create_journey
     deduct
