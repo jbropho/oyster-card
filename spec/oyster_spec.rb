@@ -1,6 +1,5 @@
 require 'oyster_card'
 
-
 describe OysterCard do
   subject(:oyster_card) { OysterCard.new }
   subject(:aldgate_east) { 'Aldgate East' }
@@ -45,16 +44,6 @@ describe OysterCard do
         expect(oyster_card.send(:exceed_limit?, 40)).to eq(false)
       end
     end
-
-  describe '.deduct' do
-    subject(:oyster_card) { OysterCard.new(10) }
-
-    it 'deducts specified amount' do
-      oyster_card.stub(:previous_journey) { double(:fare => 1)  }
-      oyster_card.send(:deduct)
-      expect(oyster_card.balance).to eq 9
-    end
-  end
 
   describe '.touch_in' do
     let(:station) { double(:station_name => 'Aldgate East') }
@@ -163,12 +152,4 @@ describe OysterCard do
   end 
   
   #feature tests  
-  describe 'touching in then out' do 
-    it 'creates a journey' do 
-      oyster_card.stub(:balance) { 2 }
-      oyster_card.touch_in(aldgate_east)
-      oyster_card.touch_out(whitechapel)
-      expect(oyster_card.journey_history.size).to be(1)
-    end
-  end
 end
