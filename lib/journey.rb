@@ -8,8 +8,12 @@ class Journey
   end 
 
   def fare 
-    return MIN_FARE if valid_journey?
+    return calculate_price if valid_journey?
     PENALTY_FARE
+  end
+  
+  def calculate_price
+    (entry_station.zone - exit_station.zone).abs + 1 
   end
 
   private 

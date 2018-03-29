@@ -122,6 +122,15 @@ describe OysterCard do
     end 
   end 
 
+  describe '.reset_data' do 
+    it 'resets a cards temporary storage' do 
+      card = described_class.new
+      card.stub(:balance) { 10 }
+      card.touch_in('aldgate east')
+      expect { card.reset_data }.to change{ card.entry_station }.from('aldgate east').to(false)
+    end 
+  end 
+
   describe '.set_exit_station' do 
     let(:station) { double(:name => 'Aldgate East') }
 
@@ -150,6 +159,5 @@ describe OysterCard do
        change{oyster_card.journey_history.size}.from(0).to(1)
     end 
   end 
-  
   #feature tests  
 end
