@@ -49,9 +49,10 @@ describe OysterCard do
 
   describe '.deduct' do
     subject(:oyster_card) { OysterCard.new(10) }
+    subject(:journey) { double(:fare => 1) }
     it 'deducts specified amount' do
-      oyster_card.send(:deduct, 5)
-      expect(oyster_card.balance).to eq 5
+      oyster_card.send(:deduct, journey)
+      expect(oyster_card.balance).to eq 9
     end
   end
 
@@ -166,6 +167,16 @@ describe OysterCard do
     end 
   end 
 
+  describe '.add_to_log' do 
+    subject (:journey) { 'journey things here' }
+    context 'when passed a journey' do 
+      it 'adds a journey to the journey_log' do 
+        expect{oyster_card.add_to_log(:journey)}.to
+          change{oyster_card.journey_log.size}.from(0).to(1)
+      end 
+    end 
+  end 
+   
   #feature tests  
   describe 'touching in then out' do 
     it 'creates a journey' do 
@@ -174,5 +185,26 @@ describe OysterCard do
       oyster_card.touch_out(whitechapel)
       expect(oyster_card.journey_history.size).to be(1)
     end
-  end  
+  end
+
+  describe '.create_journey' do 
+    context 'when passed 0 arguments' do 
+      it 'should return a new journey' do 
+        journey = oyster_card.create_journey
+        expect(journey).to be_a(Journey)
+      end 
+    end 
+    context 'when passed 1 argument' do 
+      it 'should return a new journey' do 
+        journey = oyster_card.create_journey('Aldgate East')
+        expect(journey).to be_a(Journey)
+      end
+    end 
+    context 'when passed 2 arguments' do 
+      it 'should return a new journey' do 
+        journey = oyster_card.create_journey('Aldgate East', 'Whitechapel')
+        expect(journey).to be_a(Journey)
+      end
+    end 
+  end 
 end

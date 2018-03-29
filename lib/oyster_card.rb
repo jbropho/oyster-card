@@ -1,5 +1,5 @@
 class OysterCard
-  attr_reader :balance, :in_journey, :entry_station
+  attr_reader :balance, :entry_station
   attr_reader :journey_history, :exit_station
   MAX_CAPACITY = 90
   MIN_FARE = 1
