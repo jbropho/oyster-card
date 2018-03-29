@@ -16,18 +16,6 @@ class OysterCard
     @journey_log.create_journey(@entry_station, @exit_station)
   end 
 
-  def manage_journey 
-    create_journey
-    deduct
-    reset_data
-  end 
-
-  def reset_data
-    @previous_journey = false 
-    @entry_station = false 
-    @exit_station = false
-  end 
-
   def touch_in(station)
     manage_journey if touched_in?
     raise 'You do not have enough money' if below_min?
@@ -39,21 +27,28 @@ class OysterCard
     manage_journey
   end
   
-  def append_journey 
-    journey_history << previous_journey
-  end
-
   def touched_in?
     !!entry_station 
-  end
-
-  def below_min?
-    balance < MIN_FARE
   end
 
   def top_up(amount)
     raise "Max balance of #{MAX_CAPACITY} exceeded" if exceed_limit?(amount)
     @balance += amount
+  end
+
+  private  
+  def append_journey 
+    journey_history << previous_journey
+  end
+
+  def manage_journey 
+    create_journey
+    deduct
+    reset_data
+  end 
+
+  def below_min?
+    balance < MIN_FARE
   end
 
   def set_exit_station(station = false)
@@ -64,7 +59,12 @@ class OysterCard
     @entry_station = station
   end 
 
-  private  
+  def reset_data
+    @previous_journey = false 
+    @entry_station = false 
+    @exit_station = false
+  end 
+
   def deduct
     @balance -= last_journey.fare
   end

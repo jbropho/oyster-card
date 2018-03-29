@@ -12,11 +12,11 @@ class Journey
     PENALTY_FARE
   end
   
+  private 
   def calculate_price
     (entry_station.zone - exit_station.zone).abs + 1 
   end
 
-  private 
   def valid_journey?
     entry_station && exit_station
   end

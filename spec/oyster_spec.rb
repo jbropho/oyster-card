@@ -96,7 +96,7 @@ describe OysterCard do
     context 'when balance is below min threshold' do 
       it 'returns true' do 
         oyster_card.stub(:balance) { 0.4 }
-        expect(oyster_card.below_min?).to eq true
+        expect(oyster_card.send(:below_min?)).to eq true
       end 
     end 
   end
@@ -106,7 +106,7 @@ describe OysterCard do
     
     context 'when passed a station' do
       it 'sets @entry_station' do 
-        oyster_card.set_entry_station(station)
+        oyster_card.send(:set_entry_station, station)
         station = oyster_card.entry_station
         expect(station.name).to eq('Aldgate East')
       end
@@ -114,8 +114,8 @@ describe OysterCard do
     
     context 'when not passed a station' do
       it 'overrides @entry_station to nil' do 
-        oyster_card.set_entry_station(station)
-        oyster_card.set_entry_station()
+        oyster_card.send(:set_entry_station,station)
+        oyster_card.send(:set_entry_station)
         station = oyster_card.entry_station
         expect(station).to eq(false)
       end 
@@ -127,7 +127,7 @@ describe OysterCard do
       card = described_class.new
       card.stub(:balance) { 10 }
       card.touch_in('aldgate east')
-      expect { card.reset_data }.to change{ card.entry_station }.from('aldgate east').to(false)
+      expect { card.send(:reset_data) }.to change{ card.entry_station }.from('aldgate east').to(false)
     end 
   end 
 
@@ -136,7 +136,7 @@ describe OysterCard do
 
     context 'when passed a station' do 
       it 'sets @exit_station' do 
-        oyster_card.set_exit_station(station)
+        oyster_card.send(:set_exit_station, station)
         station = oyster_card.exit_station
         expect(station.name).to eq('Aldgate East')
       end 
@@ -144,8 +144,8 @@ describe OysterCard do
 
     context 'when not passed a station' do
       it 'overrides @entry_station to nil' do 
-        oyster_card.set_exit_station(station)
-        oyster_card.set_exit_station()
+        oyster_card.send(:set_exit_station, station)
+        oyster_card.send(:set_exit_station)
         station = oyster_card.exit_station
         expect(station).to eq(false)
       end 
@@ -155,7 +155,7 @@ describe OysterCard do
   describe '.append_journey' do 
     it 'adds a journey to journey history' do 
       oyster_card.stub(:previous_journey) { 'journey object' }
-      expect{ oyster_card.append_journey }.to \
+      expect{ oyster_card.send(:append_journey) }.to \
        change{oyster_card.journey_history.size}.from(0).to(1)
     end 
   end 
