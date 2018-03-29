@@ -1,6 +1,8 @@
+require_relative 'journey'
+
 class OysterCard
   attr_reader :balance, :entry_station
-  attr_reader :journey_history, :exit_station
+  attr_reader :journey_history, :exit_station, :previous_journey
   MAX_CAPACITY = 90
   MIN_FARE = 1
 
@@ -8,22 +10,37 @@ class OysterCard
     @balance = balance
     @journey_history = Array.new
   end
+  
+  def create_journey
+    @previous_journey = Journey.new(@entry_station, @exit_station)
+  end 
+  
+  def manage_journey 
+    create_journey
+    deduct
+    append_journey
+    reset_data
+  end 
+
+  def reset_data
+    @previous_journey = false 
+    @entry_station = false 
+    @exit_station = false
+  end 
 
   def touch_in(station)
-    raise 'You are already touched in' if touched_in?
+    manage_journey if touched_in?
     raise 'You do not have enough money' if below_min?
     set_entry_station(station)
   end
 
   def touch_out(station)
-    raise 'You are already touched out' unless touched_in?
-    deduct(MIN_FARE)
-    set_exit_station(nil)
-    append_journey
+    set_exit_station(station)
+    manage_journey
   end
   
   def append_journey 
-    journey_history << { entry: entry_station, exit: exit_station }
+    journey_history << previous_journey
   end
 
   def touched_in?
@@ -48,8 +65,8 @@ class OysterCard
   end 
 
   private  
-  def deduct(amount)
-    @balance -= amount
+  def deduct
+    @balance -= previous_journey.fare
   end
   
   def exceed_limit?(amount)
