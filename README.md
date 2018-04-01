@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/jbropho/oyster-card.svg?branch=master)](https://travis-ci.org/jbropho/oyster-card)
 # Oyster Card 
-## Week long task to create a mock oyster card 
+## Week long task to create a mock oyster card application in ruby
 [Specification](https://github.com/makersacademy/course/tree/master/oystercard)
 
 ## Usage 
