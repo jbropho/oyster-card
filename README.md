@@ -27,6 +27,11 @@
       => 7
       2.5.0 :010 >
       ```
+## Testing 
+   ```
+   $ rspec 
+   ```
+   
 ## Approach
 My focus was on translating the requirments into a simple plan and writing clean,
 test driven code.
